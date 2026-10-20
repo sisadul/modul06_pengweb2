@@ -1,7 +1,6 @@
 import LabelHarga from './LabelHarga';
 import { useState } from 'react';
-function KartuMenu({nama, harga, kategori = 'Makanan', onHapus}){
-    const [jumlah, setJumlah] = useState(0)
+function KartuMenu({nama, harga, kategori = 'Makanan', jumlah,onTambah,onKurang,onHapus}){
     const [catatan, setCatatan] = useState('')
 
     const tambah = () => setJumlah(jumlah + 1)
@@ -13,11 +12,11 @@ function KartuMenu({nama, harga, kategori = 'Makanan', onHapus}){
             <LabelHarga harga={harga}/>
 
             <div className="kontrol">
-                <button onClick={() => setJumlah(jumlah - 1)} disabled = {jumlah === 0}>
+                <button onClick={onKurang} disabled = {jumlah === 0}>
                     -
                 </button>
                 <span>{jumlah}</span>
-                <button onClick={tambah} >
+                <button onClick={onTambah} >
                     +
                 </button>
             </div>

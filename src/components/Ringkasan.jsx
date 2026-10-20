@@ -7,7 +7,9 @@ function Ringkasan({nama, totalItem, totalHarga}){
             <p>Total item : {totalItem}</p>
             <p>Total harga: Rp {totalHarga.toLocaleString('id-ID')}</p>
 
-            <button disabled={totalItem === 0} onClick={() => setStruk({total: totalHarga})}>
+            <button 
+            disabled={totalItem === 0} 
+            onClick={() => setStruk({total: totalHarga})}>
                 Bayar
             </button>
             {struk && (
