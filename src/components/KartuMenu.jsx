@@ -1,6 +1,6 @@
 import LabelHarga from './LabelHarga';
 import { useState } from 'react';
-function KartuMenu({nama, harga, kategori = 'Makanan'}){
+function KartuMenu({nama, harga, kategori = 'Makanan', onHapus}){
     const [jumlah, setJumlah] = useState(0)
     const [catatan, setCatatan] = useState('')
 
@@ -33,6 +33,8 @@ function KartuMenu({nama, harga, kategori = 'Makanan'}){
                 <input value={catatan} onChange={(e) => setCatatan(e.target.value)} placeholder='isi disini'/>
             </label>
             {catatan !== '' && <p>Catatan: {catatan}</p>}
+
+            <button onClick={onHapus}>Hapus</button>
         </div>
     )
 }
